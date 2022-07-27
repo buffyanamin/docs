@@ -254,7 +254,7 @@ The :ref:`cpp_info_attributes_reference` attribute has the following properties 
   .c, .cpp). By default it is empty. It might be used to store sources (for later debugging of packages, or to reuse those sources building
   them in other packages too).
 - **build_modules**: Dictionary of lists per generator containing relative paths to build system related utility module files created by the package. Used by CMake generators to
-  include *.cmake* files with functions for consumers. e.g: ``self.cpp_info.build_modules["cmake_find_package"].append("cmake/myfunctions.cmake")``. Those files
+  include *.cmake* files with functions for consumers. e.g: ```self.cpp_info.build_modules.append("cmake/myfunctions.cmake") self.cpp_info.build_modules["cmake_find_package"].append("cmake/mypackage.cmake")``. Those files
   will be included automatically in `cmake`/`cmake_multi` generators when using `conan_basic_setup()` and will be automatically added in
   `cmake_find_package`/`cmake_find_package_multi` generators when `find_package()` is used.
 - **defines**: Ordered list of preprocessor directives. It is common that the consumers have to specify some sort of defines in some cases,
